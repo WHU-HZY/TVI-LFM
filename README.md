@@ -103,12 +103,16 @@ pip install -r requirements.txt
 
 Tri-SYSU-MM01:
 
-Step 1. Download the **pretrained base VI-ReID models** [[google drive]](https://drive.google.com/drive/folders/1DiyE1ySdWmAiNtWnG01FemZSbl2uR9aP?usp=drive_link) or Train the base model by yourself:
+Step 1. Download the **pretrained base VI-ReID models** [[google drive]](https://drive.google.com/drive/folders/1DiyE1ySdWmAiNtWnG01FemZSbl2uR9aP?usp=drive_link) and put it to `base_model/sysu/`,
+
+or,
+
+train the base model by yourself:
 ```shell
 bash scripts/base_training/sysu_base_run.sh
 ```
-The weights and logs can be found in `logs/sysu/base`.
-We need to put the base model weights into `base_model/sysu/`.
+The trained ckpt of base models and logs can be found in `logs/sysu/base`.
+Then we need to put the base model weights into `base_model/sysu/`.
 
 Step 2. Incrementally train the TVI-LFM **w/o MER**:(need to input the path to the base model weights)
 ```shell
